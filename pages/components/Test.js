@@ -60,14 +60,7 @@ const Test = () => {
                 
             </main>
         </div>
-        <motion.div
-                    className="absolute right-0 w-full  z-10 "
-                    initial="hide"
-                    whileInView="show"
-                    exit="hide"
-                    variants={introPictureVariants}>
-                    <Image src={pets} width={100} height={100} />
-                </motion.div>
+    
 
 </div>
 
