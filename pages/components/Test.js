@@ -1,43 +1,78 @@
 import React from 'react'
-import { Navbar } from "flowbite-react";
-import {IoMdArrowDropdown} from 'react-icons/io'
-import {BiMenu} from 'react-icons/bi'
-import Link from 'next/link';
-
+import { motion } from 'framer-motion';
+import pets from '../../public/images/logo.svg'
+import Image from 'next/image';
+import  gsap  from 'gsap';
+import {ScrollTrigger} from 'gsap'
+import { useEffect } from 'react';
 
 const Test = () => {
+ 
+    const introHeaderVariants = {
+        hide: {
+            opacity: 0,
+            x: -500,
+        },
+        show: {
+            opacity: 1,
+            x: 0,
+            transition: {
+                duration: 2,
+                delay: 2,
+            },
+        },
+    };
 
+    const introPictureVariants = {
+        hide: {
+            opacity: 0,
+            x: 500,
+        },
+        show: {
+            opacity: 1,
+            x: 0,
+            transition: {
+                duration: 2,
+            },
+        },
+    };
 
-  return(
-    <div className=' felx justify-center bg-transparent left-0 py-8 fixed right-0 top-0'>
-      <div className='flex justify-between px-8 '>
-
-        {/* logo section */}
-        <div className='flex justify-between gap-2'>
-          <div><Link href="/"><img src="/images/logo.svg" width={100} height={100}/></Link></div>
-          <div><IoMdArrowDropdown color='white' className='mt-2'/></div>
+  return (
+    <div>
+      <div className="flex h-[36rem] w-full flex-col items-center justify-center overflow-x-clip bg-secondary text-light md:h-[90vh]">
+         
+            <main className="relative flex w-full grow items-start justify-center py-12 px-4 md:items-center md:justify-start md:px-12">
+                <motion.header
+                    className=
+                        "z-10 flex flex-col gap-4 md:-mt-36"
+                       
+                    initial="hide"
+                    whileInView="show"
+                    exit="hide"
+                    variants={introHeaderVariants}>
+                    <h1 className="text-center text-5xl md:text-start md:text-8xl">
+                        The Best Pet <br /> Groomers <br /> in Town
+                    </h1>
+                    <p className='text-3xl font-light'>
+                        For a pawfect look and feel!
+                    </p>
+                </motion.header>
+                
+            </main>
         </div>
+        <motion.div
+                    className="absolute right-0 w-full  z-10 "
+                    initial="hide"
+                    whileInView="show"
+                    exit="hide"
+                    variants={introPictureVariants}>
+                    <Image src={pets} width={100} height={100} />
+                </motion.div>
 
-        {/* desktop menu */}
-        <div className='hidden lg:block'>
-          <ul className='flex justify-between gap-6 text-[15px] text-[#FFFFFF80]'>
-          <li className='hover:text-white ease-in-out duration-300'><Link href="/Home">Home</Link></li>
-          <li className='hover:text-white ease-in-out duration-300'><Link href="/Company">Company</Link></li>
-          <li className='hover:text-white ease-in-out duration-300'> <Link href="/Solutions">Solutions</Link></li>
-          <li className='hover:text-white ease-in-out duration-300'><Link href="/News">News</Link></li>
-          <li className='hover:text-white ease-in-out duration-300'> <Link href="/Contact">Contact</Link></li>
-          </ul>
-        </div>
+</div>
 
-        {/* mobile menu */}
-        <div className='lg:hidden'>
-          <BiMenu color='white' size={30}/>
-        </div>
-      </div>
-    </div>
 
-    
-    )
+  )
 }
 
-export default Test;
+export default Test
