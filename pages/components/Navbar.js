@@ -10,28 +10,28 @@ const Navbar = ({timeline}) => {
     let menu_items = useRef(null);
     let menu_mobile = useRef(null)
 
-    useEffect(()=> {
-        // logo animation
-        timeline.to(logo,{
-            delay: 0.1,
-            duration: 0.9,
-            opacity: 1,
-            y: 20
-        })
-        // menu animation
-        timeline.to(menu_items,{
-          duration: 0.9,
-          delay: 0.1,
-          opacity: 1,
-          y: 20
-      })
-      // mobile menu animation
-        timeline.to(menu_mobile, {
-          duration: 0.9,
-            opacity: 1,
-            y: 20
-        })
-    })
+    // useEffect(()=> {
+    //     // logo animation
+    //     timeline.to(logo,{
+    //         delay: 0.1,
+    //         duration: 0.9,
+    //         opacity: 1,
+    //         y: 20
+    //     })
+    //     // menu animation
+    //     timeline.to(menu_items,{
+    //       duration: 0.9,
+    //       delay: 0.1,
+    //       opacity: 1,
+    //       y: 20
+    //   })
+    //   // mobile menu animation
+    //     timeline.to(menu_mobile, {
+    //       duration: 0.9,
+    //         opacity: 1,
+    //         y: 20
+    //     })
+    // })
 
 
   return(
