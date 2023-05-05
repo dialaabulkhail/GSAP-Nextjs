@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+/* 
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -24,30 +24,15 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+} */
+
+
+.wrapper{
+  display:grid;
+  place-items:center;
+  
+   
 }
-
-
-
-
-#cards{
-  height: 70vh;
-  width: 90%;
-  margin: auto;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  vertical-align: bottom;
-}
-#card {
-  position: absolute;
-  width: 20vw;
-  height: 70vh;
-background-color: white;
-  /* display: flex; */
-  /* margin-bottom: 50px; */
-
-}
-
 
 
 /* nav */
@@ -62,3 +47,7 @@ background-color: white;
   font-family: 'Monument';
   margin-left: 20px;
 }
+
+
+
+

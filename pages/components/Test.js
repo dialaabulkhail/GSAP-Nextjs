@@ -1,10 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion';
-import pets from '../../public/images/logo.svg'
-import Image from 'next/image';
-import  gsap  from 'gsap';
-import {ScrollTrigger} from 'gsap'
-import { useEffect } from 'react';
+
 
 const Test = () => {
  
