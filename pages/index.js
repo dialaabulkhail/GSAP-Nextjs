@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import Navar from "./components/Navbar";
-// import HomeCards from "./components/HomeCards";
+import HomeCards from "./components/HomeCards";
 import Test from "./components/Test";
 import gsap from 'gsap';
 
@@ -12,12 +12,15 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
 
   let timeline = gsap.timeline()
+  
   return (
-    <main className="text-white flex min-h-screen flex-col items-center justify-between bg-[#00004d]">
+    <div className="bg-[#000025] text-white bg-gradient-to-r from-[#000025] to-[#000069]">
+    <main className="flex flex-col min-h-screen items-center justify-between ">
       <Navar timeline={timeline}/>
-<Test />
-      {/* <HomeCards /> */}
+{/* <Test /> */} 
     </main>
+    <HomeCards timeline={timeline} />
+    </div>
   );
 }
 
