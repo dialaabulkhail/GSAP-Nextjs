@@ -33,10 +33,22 @@ const Navbar = ({timeline}) => {
     //     })
     // })
 
+    useEffect(()=>{
+      window.onscroll = function() {myFunction()}
+    })
+
+    function myFunction() {
+    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var scrolled = (winScroll / height) * 100;
+    document.getElementById("myBar").style.backgroundColor = 'rgb(255 255 255 / 0.1)' ;
+  }
+
 
   return(
-    <div className=' felx justify-center bg-transparent left-0 py-8 fixed right-0 top-0' >
-      <div className='flex justify-between px-8'>
+    <div className=' bg-transparent left-0 py-8 right-0 top-0 fixed
+    z-[100] ease-in-out duration-300' id="myBar">
+      <div className='flex justify-between px-8 '  >
 
         {/* logo section */}
         <div className='flex justify-between gap-2 logo' ref={el => logo = el}>

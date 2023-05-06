@@ -5,6 +5,7 @@ import HomeCards from "./components/HomeCards";
 import Test from "./components/Test";
 import gsap from 'gsap';
 import Cards from "./components/Cards";
+import Video from "./components/Video";
 
 
 
@@ -23,7 +24,9 @@ export default function Home() {
     </main>
     <HomeCards timeline={timeline} />
 
-    <Cards />
+    <Cards timeline={timeline}/>
+
+    {/* <Video /> */}
     </div>
 
 
